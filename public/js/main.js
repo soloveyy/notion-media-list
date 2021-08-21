@@ -13,7 +13,11 @@ const getMediaFromBack = async() => {
 
 const showMediaContent = async () => {
     const media = await getMediaFromBack()
-    
+
+    if (loadingState == false) {
+        loading.innerHTML = ''
+    }
+
     media.forEach(el => {
         const div = document.createElement('div')
         div.innerHTML = `
